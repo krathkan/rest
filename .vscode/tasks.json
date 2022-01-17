@@ -1,0 +1,29 @@
+{
+    "tasks": [
+        {
+            "type": "npm",
+            "script": "build",
+            "problemMatcher": [
+                "$deployToABAP"
+            ],
+            "group": "build",
+            "label": "build"
+        },
+        {
+            "type": "npm",
+            "script": "deploy",
+            "problemMatcher": [
+                "$deployToABAP"
+            ],
+            "label": "deploy"
+        },
+        {
+            "type": "npm",
+            "script": "deploy-config",
+            "problemMatcher": [
+                "$deployToABAP"
+            ],
+            "label": "deploy-config"
+        }
+    ]
+}

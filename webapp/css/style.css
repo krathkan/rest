@@ -1,0 +1,55 @@
+/* Enter your custom styles here */
+
+
+.sapMColumnHeader{
+    padding-top: 10% !important;
+}
+
+th div bdi{
+    font-weight: bold !important;
+   font-size:larger;
+}
+
+td .sapMText, th div{
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+td, th{
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+.sapMListTbl .sapMText, .sapMListTbl .sapMLabel{
+    font-size: 0.7rem !important;
+}
+.sapUiBody {
+    background-color: white !important;
+}
+
+
+.sapMTitle{
+  font-weight: bold !important;
+  /* color: white !important; */
+}
+.sapMBtnInner{
+    border-radius: 5px !important;
+    border-color: white !important;
+}
+
+.sapMInputBaseContentWrapper{
+    border-radius: 5px;
+}
+.sapMColumnHeader{
+    padding: 0% !important;    
+}
+.sapMListTbl .sapMText{
+    font-size: 13px !important;
+}
+.sapMSFF{
+    border-radius: 12px;
+}
+.sapMListTblRow{
+    height: 1.7rem !important;
+}
+/* Enter your custom styles here */

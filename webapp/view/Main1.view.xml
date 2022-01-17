@@ -1,0 +1,90 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:l="sap.ui.layout" controllerName="rest1.controller.Main1" displayBlock="true">
+    <Shell id="shell">
+        <App id="app">
+           <pages><Page id="page" title="Goods Movement">
+                    <content>
+                       <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" editable="true" layout="ResponsiveGridLayout" id="form0" labelSpanM="4" columnsM="6">
+					    <sap.ui.layout.form:content>
+                            <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" id="form1" layout="ResponsiveGridLayout" editable="true" columnsXL="4" maxContainerCols="4" columnsM="2" labelSpanS="3">
+					        <sap.ui.layout.form:content>                             
+					            <Label id="Plant" text="Plant" width="" textDirection="LTR"/>
+                                <Input width="30%" id="iPlant" showValueHelp="true" enabled="true" 
+                                tooltip="Enter Plant" textAlign="Begin" maxLength="4"/>
+					            <Label id="Material" text="Material" width="" textDirection="LTR"/>
+					            <Input width="100%" id="iMatnr" showValueHelp="true" change="onChange" 
+                                valueHelpRequest=".onSearchHelp" autocomplete="false"  fieldWidth="100%"
+                                enableSuggestionsHighlighting="false" />
+                                <Text xmlns:mvc="sap.ui.core.mvc" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" xmlns="sap.m" id="Mat_desc" />                               
+                                <Label id="StgeLoc" text="From SLoc" width="" textDirection="LTR"/>
+					            <Input width="30%" id="iFromSloc" showValueHelp="true" 
+                                valueHelpRequest=".onSlocHelpRequested" fieldWidth="50%" autocomplete="false" 
+                                enableSuggestionsHighlighting="false"/>
+					            <Label id="MoveStloc" text="To SLoc" width="" textDirection="LTR"/>
+                                <Input width="30%" id="iToSloc" showValueHelp="true" 
+                                valueHelpRequest=".onSlocHelpRequested" fieldWidth="50%" textAlign="Left" 
+                                autocomplete="false" enableSuggestionsHighlighting="false"/>	
+                                <Label id="EntryQnt" text="Quantity" width="" textDirection="LTR"/>
+					            <Input width="100%" id="iQuant" showValueHelp="false" tooltip="Enter quantity" fieldWidth="100%" autocomplete="false" enableSuggestionsHighlighting="false"/>
+                                <Input width="20%" id="iUom" fieldWidth="100%"/>
+                        </sap.ui.layout.form:content>
+					    </sap.ui.layout.form:SimpleForm>
+                        <sap.ui.layout.form:SimpleForm xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:sap.ui.core="sap.ui.core" id="form2" layout="ResponsiveGridLayout" editable="true" columnsXL="4" maxContainerCols="4">
+					        <sap.ui.layout.form:content>                                                                    	
+                                <Table xmlns="sap.m" noDataText="No data" items="{Results>/}" id="iTab" sticky="ColumnHeaders" growingThreshold="4" visible="false" growingScrollToLoad="false" growing="true">
+                                    <columns>	
+                                        <Column id="column0">	
+                                            <header>	
+                                                <Label text="Descr. of Storage Loc." id="label0"/>	
+                                            </header>	
+                                        </Column>	
+                                        <Column id="column1">	
+                                            <header>	
+                                                <Label text="Storage location" id="label1"/>	
+                                            </header>	
+                                        </Column>	
+                                        <Column id="column2">	
+                                            <header>	
+                                                <Label text="Quantity" id="label2"/>	
+                                            </header>	
+                                        </Column></columns>
+                                        <items>
+                                        <ColumnListItem id="colList" type="Navigation" press="onSelect">
+                                        <cells>
+                                                <Text text="{Results>Lgobe}" id="T1"/>
+                                        </cells>
+                                          <cells>
+                                                <Text text="{Results>LGORT}" id="T2"/>
+                                        </cells>
+                                          <cells>
+                                                <Text text="{Results>LABST}" id="T3"/>
+                                        </cells>
+                                        </ColumnListItem>
+                                        </items>
+                                        </Table>
+                             </sap.ui.layout.form:content>
+					    </sap.ui.layout.form:SimpleForm>
+                            </sap.ui.layout.form:content>
+					</sap.ui.layout.form:SimpleForm>
+                      
+              </content>
+                    <footer>
+				    <Toolbar width="100%" id="Footer">
+                    
+                    <Bar id="bar1">
+                        <!-- <contentMiddle>
+                            <Image src="../img/Toro.png" height="50px" width="140px"/>
+                        </contentMiddle> -->
+                       <contentRight>
+                        <Button icon="sap-icon://alert" text="{= ${message>/}.length}" visible="{= ${message>/}.length &gt; 0}" id="logs" type="Emphasized" press="onMessagePopoverPress" />
+                        <Button xmlns="sap.m" text="Post" id="iPost" type="Accept" press="onPost" activeIcon="sap-icon://system-exit" tooltip="Post Document"/>
+                        <Button xmlns="sap.m" text="Clear" id="button1" type="Default" press="onClear" tooltip="Clear Fields"/>
+                        <Text xmlns="sap.m" text="Text" id="success" visible="false"/>
+                        </contentRight>                       
+                    </Bar>
+                    </Toolbar>
+				</footer>
+                </Page>
+            </pages>
+        </App>
+    </Shell>
+</mvc:View>
